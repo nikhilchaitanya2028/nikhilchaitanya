@@ -1,0 +1,330 @@
+interview points to be followed :
+-->listen properly
+-->think
+-->analyze
+-->deliver
+-->before answering
+--> not use "actually" word in an interview
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+java core
+j unit
+jenkin
+github
+sonacube
+mysql
+design pattren
+maven
+graddle
+mockito
+html
+css
+java script
+type script
+spring 
+spring boot
+spring mvc
+hibernate
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+My dear valuable Learner 
+
+ We want live in this world 
+
+ Without Money how can we live? 
+
+ Without good job how can we earn money? 
+
+ Without effort and sacrifice how can we get job? 
+
+ Join our training regularly achive your targets 
+
+ Don't loose your confidence 
+
+Because
+ we want to live in this world
+
+Yous Varadharajan 
+5 coloumns  [1crore records] no alter
+id name dob age surname --> get boys --> select emp_name from developer where not ((emp_name like '%u' or emp_name like '%a' or emp_name like '%i' or emp_name like '%o' or emp_name like '%e') and not (emp_name='jishnu'));
+select id as Register_Number from pertab;
+mysql> /*sdjbfmnsdfb
+   /*> dfvndfmnv
+   /*> sdlvkldsf vfkvm, vklds,mvnbsd
+   /*> sd;
+   /*> vcxvbzXCV?mxcvxzc vs
+   /*> dlsd;kl cdzlczdbfnj'zX?'zs/c.vnblg;'DZ?' kmsdnfnd
+   /*> */
+
+difference between unique key constrains  and primary key constrains :
+primary key : does not support null value
+unique key : support null value
+DDL	-5	=> create, alter, drop,truncate, rename
+TCL	-4	=> SET TRANSACTION, COMMIT, ROLLBACK, SAVEPOINT
+DML	-3	=> INSERT UPDATE DELETE
+DCL	-2	=> GRANT REVOKE
+DRL/DSL/DQL-1 => SELECT
+select,delete,update => we can add where condition[only with these 3 commands]
+java => can be both front end and back end
+my sql => only backend
+anguar =>  front end framework
+spring boot => backend framework
+
+===========================================================================================================================================
+
+jdbc => java data base connectivity => application program interface that connects java to mysql[collection of class and  interface]
+steps to setup jdbc :
+1. create database and tables.
+2. know the details regards credentials about the mysql use[username,portnumber[3306],password,mysqlfiles[jar].
+3. create a java project in eclipse ide.
+4. call and add mysql driver and etails.
+5. close the connection.[mysql-connector-java-5.1.46.jar]
+==========================================================================================================================
+1. load the driver
+2. create the connection
+3.create the statement
+4. excute the query
+5. close the connection
+
+SAMPLE CODE => [
+package jdbc;
+
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+public class Proconnect {
+
+	public static void main(String[] args)
+	{
+		try 
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/jfs","root","mysql123");
+			
+			Statement st=(Statement) con.createStatement();
+			
+			ResultSet rs=st.executeQuery("select * from jfresher");
+			
+			while(rs.next())
+			{
+			System.out.println(rs.getString(1)+"\t"+rs.getString(2)+"\t"+rs.getString(3)+"\t"+rs.getString(5)+"\t"+rs.getString(6));
+			}
+		} 
+		catch (Exception e) {
+			System.out.println(e);
+		
+		}
+
+	}
+
+}
+]
+================================================================================================================
+
+import java.sql.Connection;
+import java.sql.DriverAction;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class Create {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/9299batch","root","root");
+		PreparedStatement ps=con.prepareStatement("insert into employee values(?,?,?)");
+	    ps.setInt(1, 13);
+	    ps.setString(2, "gayathri");
+	    ps.setDouble(3, 34000.8);
+	    ps.executeUpdate();
+		con.close();
+		System.out.println("created succssfullyroo");
+		
+		
+
+	}
+
+}
+================================================================================================================
+import java.sql.Connection;
+import java.sql.DriverAction;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class Create {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the id");
+		int id=sc.nextInt();
+		System.out.println("enter the name");
+	      String name=sc.next();
+		System.out.println("enter the salary");
+		double salary=sc.nextDouble();
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/9299batch","root","root");
+		PreparedStatement ps=con.prepareStatement("insert into employee values(?,?,?)");
+	    ps.setInt(1, id);
+	    ps.setString(2, name);
+	    ps.setDouble(3, salary);
+	    ps.executeUpdate();
+		con.close();
+		System.out.println("created succssfullyroo");
+		
+		
+
+	}
+
+}
+======================================================================================================================
+import java.sql.Connection;
+import java.sql.DriverAction;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class Create {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the id");
+		int id=sc.nextInt();
+		//System.out.println("enter the name");
+	    //  String name=sc.next();
+		System.out.println("enter the salary");
+		double salary=sc.nextDouble();
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/9299batch","root","root");
+		PreparedStatement ps=con.prepareStatement("update employee set salary=? where id=?");
+	   
+	   
+	    ps.setDouble(1, salary);
+	    ps.setInt(2, id);
+	    ps.executeUpdate();
+		con.close();
+		System.out.println("created succssfullyroo");
+		
+		
+
+	}
+
+}
+=====================================================================================================================
+import java.sql.Connection;
+import java.sql.DriverAction;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class Create {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the id");
+		int id=sc.nextInt();
+		//System.out.println("enter the name");
+	    //  String name=sc.next();
+		//System.out.println("enter the salary");
+		//double salary=sc.nextDouble();
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/9299batch","root","root");
+		PreparedStatement ps=con.prepareStatement("delete from employee where id=?");
+	   
+	   
+	   // ps.setDouble(1, salary);
+	    ps.setInt(1, id);
+	    ps.executeUpdate();
+		con.close();
+		System.out.println("created succssfullyroo");
+		
+		
+
+	}
+
+}
+=================================================================================================================
+JDBC NOTES:
+
+
+
+JDBC:
+java Database connectivity:API=>application Programming Interface.(collection of class and interface)
+
+
+Java Application  ===>JDBCAPI and Driver ====>Database(mysql server)
+
+Types:
+========
+1.JDBCODBC Driver
+2.NativeApIpartlyDriver
+3.NetworkProtocolDriver
+4.thin driver
+===============================================
+
+Steps:
+======
+
+1.load the driver
+
+2.create the connection
+
+3.statement
+
+4.execute the query
+
+5.close the connection
+=====================================================
+Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/8657capgemini","root","root");
+       // PreparedStatement statement=con.prepareStatement("insert into empnew values(?,?)");
+       // PreparedStatement statement=con.prepareStatement("update empnew set ename=? where id=?");
+
+        PreparedStatement statement=con.prepareStatement("delete from empnew where id=?");
+
+
+
+============================================================================================
+
+Statement:create the table
+
+PreparedStatement:insert,update,delete,select
+
+excute:create
+executeUpdate:insert,update,delete
+executeQuery:select
+=============================================================================================
+
+GITHUB ====================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Git Command:
+1.  ls
+2. cd d:/foldername
+3.  git init
+4.git remote remove origin
+4.git remote add origin https://github.com/chitta2015/fgfd.git
+5.git remote -v
+
+6.  git add .
+7.  git commit -m "commit message"
+  
+8.  git push origin master
